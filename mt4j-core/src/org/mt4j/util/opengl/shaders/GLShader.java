@@ -105,7 +105,7 @@ public class GLShader {
 	public void useShaders()
 	{
 	    gl.glLinkProgram(glslProgram);
-	    gl.glValidateProgram(glslProgram);
+//	    gl.glValidateProgram(glslProgram);
 //        checkStatus("ValidationStatus: ", GL20.GL_VALIDATE_STATUS, glslProgram );
 	}
 	

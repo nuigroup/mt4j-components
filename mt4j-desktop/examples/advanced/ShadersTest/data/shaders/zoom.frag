@@ -4,6 +4,6 @@
      float dist_squared = dot(pos, pos);
  
      gl_FragColor = (dist_squared < 400.0) 
-         ? vec4(.90, .90, .90, 1.0)
-         : vec4(.20, .20, .40, 1.0);
+         ? vec4(0.0, 1.0, 0.0, 1.0)
+         : vec4(1.0, 0.0, 0.0, 1.0);
  }

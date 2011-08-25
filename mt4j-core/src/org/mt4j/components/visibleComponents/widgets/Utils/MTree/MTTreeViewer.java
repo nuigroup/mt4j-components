@@ -14,7 +14,7 @@ public class MTTreeViewer extends MTRectangle {
 	private static float xPad,yPad;
 	
 	public MTTreeViewer(PApplet pApplet) {
-		super(pApplet,1,1);
+		super(pApplet,50,50);
 		setNoStroke(true);
 		setFillColor(new MTColor(0,0,0,0));
 		setAnchor(PositionAnchor.UPPER_LEFT);
@@ -25,7 +25,7 @@ public class MTTreeViewer extends MTRectangle {
 	
 	public void addNode(AbstractTreeNode node)
 	{
-		children.add(node);
+		children.add(node);	
 		redraw();
 	}
 	
@@ -50,6 +50,7 @@ public class MTTreeViewer extends MTRectangle {
 			children.get(i).redraw();
 			yPos = vec.y + children.get(i).getHeight();
 		}
+		setParentHeightWidth();
 	}
 	
 	public void setOffset(float xOffset, float yOffset)
@@ -66,5 +67,16 @@ public class MTTreeViewer extends MTRectangle {
 	public static float getYOffset()
 	{
 		return yPad;
+	}
+	
+	private void setParentHeightWidth()
+	{
+		float height = 0 ;
+		for (int i = 0 ; i < children.size() ; i ++)
+		{
+			height = height + children.get(i).getHeight();
+		}
+		System.out.println(height);
+		this.setSizeLocal(500f, height);
 	}
 }

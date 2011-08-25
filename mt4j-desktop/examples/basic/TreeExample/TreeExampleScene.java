@@ -14,13 +14,19 @@ public class TreeExampleScene extends AbstractScene{
 		
 		MTTreeViewer tree = new MTTreeViewer(mtApplication);
 		tree.setOffset(30, 0);
+		tree.setFillColor(new MTColor(255,0,0,255));
+		//tree.setComposite(true);
 		
 		myTreeNode node = new myTreeNode(mtApplication, " 0 0");
 		node.addChildNode(new myTreeNode(mtApplication, " 1 1"));
 		node.addChildNode(new myTreeNode(mtApplication, " 1 2"));
 		node.getChildNode(1).addChildNode(new myTreeNode(mtApplication, " 2 1"));
-
+		node.addChildNode(new myTreeNode(mtApplication, " 1 1"));
+		node.addChildNode(new myTreeNode(mtApplication, " 1 2"));
 		tree.addNode(node);
+		tree.addNode(new myTreeNode(mtApplication, " 2 2"));
+		tree.addNode(new myTreeNode(mtApplication, " 2 2"));
+		tree.addNode(new myTreeNode(mtApplication, " 2 2"));
 		tree.addNode(new myTreeNode(mtApplication, " 2 2"));
 		
 		getCanvas().addChild(tree);

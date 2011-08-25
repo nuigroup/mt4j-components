@@ -8,8 +8,5 @@ public class StartTest extends MTAndroidApplication {
     @Override
     public void startUp() {
     	this.addScene(new TestScene1(this, "TestScene1"));
-    	
     }
-    
-    
 }
