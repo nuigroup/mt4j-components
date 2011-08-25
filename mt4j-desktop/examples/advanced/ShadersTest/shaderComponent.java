@@ -29,38 +29,38 @@ public class shaderComponent extends MTRectangle {
     MTRectangle rec;
 	
 	public shaderComponent(PApplet pApplet) {
-		super(pApplet,500,500);
-		this.pa = (MTApplication)pApplet;
+		 super(pApplet,500,500);
+		 this.pa = (MTApplication)pApplet;
 		                
-        myShader = new GLShader(pa);
-        myShader.loadVertexShader(shaderPath+"zoom.vert");
-        myShader.loadFragmentShader(shaderPath+"zoom.frag");
-        myShader.useShaders();
+     myShader = new GLShader(pa);
+     myShader.loadVertexShader(shaderPath+"zoom.vert");
+     myShader.loadFragmentShader(shaderPath+"zoom.frag");
+     myShader.useShaders();
         
-       // setNoFill(true);
+     // setNoFill(true);
         
      PImage img = pa.loadImage(dataPath+"background.jpg");
 
      //   fbo = new GLFBO(pApplet,img.width,img.height);
 		//Attach texture to FBO to draw into
-	//	GLTexture tex = fbo.addNewTexture();
+	  //GLTexture tex = fbo.addNewTexture();
 		
 		//Apply the texture to this component
-	this.setTexture(img);
+	  this.setTexture(img);
 		
-      //  rec = new MTRectangle(pa,500,500);
+    //  rec = new MTRectangle(pa,500,500);
 	}
 
 	@Override
 	public void drawComponent(PGraphics g) {
         if (MT4jSettings.getInstance().isOpenGlMode()){
-    		//fbo.clear(true, 0, 255, 0, 0, true);
-        	//fbo.startRenderToTexture();
-          //  myShader.startShader();
-        	//rec.drawComponent(g);
+            myShader.startShader();
             super.drawComponent(g);
-        //	myShader.stopShader();
-        //	fbo.stopRenderToTexture();
+            myShader.stopShader();
+        //fbo.clear(true, 0, 255, 0, 0, true);
+        //fbo.startRenderToTexture();
+         //rec.drawComponent(g);
+        // fbo.stopRenderToTexture();
         }
 	}
 	
